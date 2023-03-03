@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Rigidbody2D body; //created a reference to the player rigidbody 2d
+    private bool grounded;
 
     private void Awake() //create Awake Method load when you load the script
     {
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         //flip player when moving left-right
         if(horizontalInput > 0.01f)
         {
+            
             transform.localScale = Vector3.one;
         }
          else if(horizontalInput < -0.01f)
@@ -31,7 +34,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            body.velocity = new Vector2(body.velocity.x, speed);
+            Jump();
         }
+    }
+
+    private void Jump()
+    {
+         body.velocity = new Vector2(body.velocity.x, speed);
+         grounded = false;
     }
 }
