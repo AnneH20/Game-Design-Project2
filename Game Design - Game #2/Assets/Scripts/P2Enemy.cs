@@ -40,4 +40,10 @@ public class P2Enemy : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
+
+    public void outOfBounds()
+    {
+        P2currentHealth = 0;
+        P2healthBar.P2SetHeatlh(P2currentHealth);
+    }
 }
