@@ -7,7 +7,8 @@ public class P2Enemy : MonoBehaviour
     public Animator P2animator;
     public int P2maxHealth = 100;
     int P2currentHealth;
-    [SerializeField] private AudioSource P2Audio;
+    [SerializeField] private AudioSource P2Punch;
+    [SerializeField] private AudioSource P2Death;
 
     public P2Health P2healthBar;
 
@@ -27,7 +28,7 @@ public class P2Enemy : MonoBehaviour
         {
             Die();
         }
-        P2Audio.Play();
+        P2Punch.Play();
         P2healthBar.P2SetHeatlh(P2currentHealth);
     }
     void Die()
@@ -35,6 +36,7 @@ public class P2Enemy : MonoBehaviour
         Debug.Log("Enemy 2 died!");
         // Die animation
         P2animator.SetBool("IsDead", true);
+        P2Death.Play();
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }

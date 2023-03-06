@@ -7,7 +7,8 @@ public class P1Enemy : MonoBehaviour
     public int P1maxHealth = 100;
     int P1currentHealth;
     public P1Health P1healthBar;
-    [SerializeField] private AudioSource P1Audio;
+    [SerializeField] private AudioSource P1Punch;
+    [SerializeField] private AudioSource P1Death;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class P1Enemy : MonoBehaviour
         {
             Die();
         }
-        P1Audio.Play();
+        P1Punch.Play();
         P1healthBar.P1SetHeatlh(P1currentHealth);
     }
     void Die()
@@ -33,7 +34,7 @@ public class P1Enemy : MonoBehaviour
         Debug.Log("Enemy 1 died!");
         // Die animation
         P1animator.SetBool("IsDead", true);
-
+        P1Death.Play();
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
