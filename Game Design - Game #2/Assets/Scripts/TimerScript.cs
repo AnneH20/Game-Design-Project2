@@ -6,7 +6,7 @@ using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
-    private float timerDuration = 10f;
+    private float timerDuration = 3f * 60;
     private float timer;
 
     [SerializeField] private TextMeshProUGUI firstMinute;
@@ -16,7 +16,7 @@ public class TimerScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI secondSecond;
 
     private float flashTimer;
-    private float flashDuration = 3f * 60;
+    private float flashDuration = 1f;
 
     // Start is called before the first frame update
     void Start()
