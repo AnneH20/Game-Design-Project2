@@ -6,7 +6,7 @@ public class P2Movement : MonoBehaviour
 {
 
     public CharacterController2D controller;
-    public Animator animator;
+    public Animator P2animator;
 
     public float runSpeed = 40f;
 
@@ -20,12 +20,12 @@ public class P2Movement : MonoBehaviour
 
         horizontalMove = Input.GetAxisRaw("Player 2 Horizontal") * runSpeed;
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        P2animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Player 2 Jump"))
         {
             jump = true;
-            animator.SetBool("IsJumping", true);
+            P2animator.SetBool("IsJumping", true);
         }
 
         if (Input.GetButtonDown("Player 2 Crouch"))
@@ -41,12 +41,12 @@ public class P2Movement : MonoBehaviour
 
     public void OnLanding()
     {
-        animator.SetBool("IsJumping", false);
+        P2animator.SetBool("IsJumping", false);
     }
 
     public void OnCrouching(bool isCrouching)
     {
-        animator.SetBool("IsCrouching", isCrouching);
+        P2animator.SetBool("IsCrouching", isCrouching);
     }
 
     void FixedUpdate()
