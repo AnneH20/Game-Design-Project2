@@ -45,6 +45,44 @@ The quit button exits the application
 CURRENTLY DOES NOT CONTAIN ANYTHING
   
 
+# Contributers:
+
+**Anne Heidebreicht ([alh1310](https://github.com/AnneH20)**
+  - Initial Gunnery Sergeant Cook character development
+  - Future Space Woman character development
+  - Game Design Pitch Presentation contributor
+  - Game Design Document contributor
+  - Unity software developer
+    - Player Health and Game Timer UI
+    - Player Animation & SFX
+    - Refining Visuals
+    
+**Austin (John) Reed ([jar741](https://github.com/ReedJA117)**
+  - Initial Gunnery Sergeant Cook character development
+  - Caveman character development
+  - Game Design Pitch Presentation contributor
+  - Game Design Document contributor
+  - Unity software developer
+    - Background UI & Music
+    - Player Movement
+    
+**Cassie Javorsky ([clj500](https://github.com/clj500)**
+  - Gunnery Sergeant Cook character development
+  - Samurai character development
+  - Game Design Pitch Presentation contributor
+  - Game Design Document contributor
+  - Unity Software Developer
+    - Main Menu and Game Over Interfaces
+    - Controls Page
+    - Refining Visuals
+    
+**Gabe Becker ([gjb125](https://github.com/GabeBecker2048)**
+  - Samurai character development
+  - Game Design Pitch Presentation contributor
+  - Game Design Document contributor
+
+
+
 
   
   
