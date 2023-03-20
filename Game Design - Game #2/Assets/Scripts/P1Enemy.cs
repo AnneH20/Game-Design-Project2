@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class P1Enemy : MonoBehaviour
 {
@@ -7,13 +8,15 @@ public class P1Enemy : MonoBehaviour
     public int P1maxHealth = 100;
     int P1currentHealth;
 
-
     public P1Health P1healthBar;
     [SerializeField] private AudioSource P1Punch;
     [SerializeField] private AudioSource P1Death;
-
-    [SerializeField] private int MaxLives;
-    private int currentLives;
+    public Image[] lives;
+    //[SerializeField] private int MaxLives;
+    public int currentLives;
+    
+    public GameOverScript gameManager;
+    private bool isGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,7 @@ public class P1Enemy : MonoBehaviour
         P1currentHealth = P1maxHealth;
         P1healthBar.P1SetMaxHealth(P1maxHealth);
 
-        currentLives = MaxLives;
+        currentLives = 3;
     }
 
     public void TakeDamage(int P1damage)
@@ -49,14 +52,39 @@ public class P1Enemy : MonoBehaviour
         {
             
             currentLives--;
+            lives[currentLives].enabled = false;
             P1currentHealth = P1maxHealth;
             P1healthBar.P1SetHeatlh(P1currentHealth);
-            
+
             StartCoroutine(Respawn());
         }
         // need to add end scene as else statmenet. 
-        else{
+        if (currentLives == 0){
             P1animator.SetBool("HasLives",false);
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        if (!isGameOver)
+        {
+            //Set game over to true
+            isGameOver = true;
+
+            //Announce winner
+            Debug.Log("Player 2 Wins!");
+
+            //Trigger Game Over Manager
+            gameManager.gameOver();
+
+            //Disable Player
+            gameObject.SetActive(false);
+        }
+
+        else
+        {
+            gameManager.gameOver();
         }
     }
 
@@ -80,16 +108,12 @@ public class P1Enemy : MonoBehaviour
     }
 
     IEnumerator Respawn()
-    {
-        
-        yield return new WaitForSeconds(2f);
-        transform.position = new Vector2(4, -4);
-        P1animator.SetBool("IsDead", false);
+    {     
+        yield return new WaitForSeconds(1f);
+        transform.position = new Vector2(-4, -4);
+        //P1animator.SetBool("IsDead", false);
         P1animator.SetBool("HasLives",true);
         P1healthBar.P1SetHeatlh(P1currentHealth);
-        
-       
-
     }
 }
 

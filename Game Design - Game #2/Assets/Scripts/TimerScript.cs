@@ -18,6 +18,9 @@ public class TimerScript : MonoBehaviour
     private float flashTimer;
     private float flashDuration = 1f;
 
+    public GameOverScript gameManager;
+    private bool isGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,9 +79,31 @@ public class TimerScript : MonoBehaviour
             flashTimer -= Time.deltaTime;
             SetTextDisplay(true);
         }
+
+        GameOver();
     }
 
-    private void SetTextDisplay(bool enabled)
+    private void GameOver()
+    {
+        if (!isGameOver)
+        {
+            //Set game over to true
+            isGameOver = true;
+
+            //Announce winner
+            Debug.Log("Time's Up!");
+
+            //Trigger Game Over Manager
+            gameManager.gameOver();
+        }
+
+        else
+        {
+            //Nothing happens
+        }
+    }
+
+        private void SetTextDisplay(bool enabled)
     {
         firstMinute.enabled = enabled;
         secondMinute.enabled = enabled;
