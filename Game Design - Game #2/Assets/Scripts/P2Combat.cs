@@ -3,7 +3,6 @@ using System.Collections;
 
 public class P2Combat : MonoBehaviour
 {
-    [SerializeField] private AudioClip FBarbarianPunch;
     public Animator P2animator;
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -15,7 +14,6 @@ public class P2Combat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SoundManager.instance.PlaySound(FBarbarianPunch);
             P2Attack();
         }
     }

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class P1Combat : MonoBehaviour
 {
-    [SerializeField] private AudioClip FCyberPunch;
     public Animator P1animator;
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -15,7 +14,6 @@ public class P1Combat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Period))
         {
-            SoundManager.instance.PlaySound(FCyberPunch);
             P1Attack();
         }
     }
