@@ -53,7 +53,7 @@ Change background music volume for the entire game
 Pauses the game and allows players to:
   - Resume
   - Go to Main Menu
-  - Exit the gmae
+  - Exit the game
 
 # Contributers:
 
