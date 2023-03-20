@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     public GameObject gameOverUI;
+    public GameObject player1;
+    public GameObject player2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,17 +36,19 @@ public class GameOverScript : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+        player1.SetActive(false);
+        player2.SetActive(false);
     }
 
     public void mainMenu()
     {
-        SceneManager.LoadScene("Homescreen");
+        SceneManager.LoadScene("HomeScreen");
         Debug.Log("Main Menu");
     }
 
     public void rematch()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("PlayGame");
         Debug.Log("Rematch");
     }
 

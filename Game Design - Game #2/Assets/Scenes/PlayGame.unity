@@ -3318,8 +3318,8 @@ MonoBehaviour:
   - {fileID: 1217746731}
   - {fileID: 468205746}
   m_Bounds:
-    m_Center: {x: -0.024534956, y: -0.07944003, z: 0}
-    m_Extent: {x: 0.13453503, y: 0.23556006, z: 0}
+    m_Center: {x: -0.024535, y: -0.07944003, z: 0}
+    m_Extent: {x: 0.13453498, y: 0.23556006, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -3668,6 +3668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1687284387}
+  player1: {fileID: 1613750525}
+  player2: {fileID: 1260617534}
 --- !u!4 &1455143247
 Transform:
   m_ObjectHideFlags: 0
