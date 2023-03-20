@@ -47,7 +47,7 @@ CURRENTLY DOES NOT CONTAIN ANYTHING
 
 # Contributers:
 
-**Anne Heidebreicht ([alh1310](https://github.com/AnneH20)**
+**Anne Heidebreicht ([alh1310](https://github.com/AnneH20))**
   - Initial Gunnery Sergeant Cook character development
   - Future Space Woman character development
   - Game Design Pitch Presentation contributor
@@ -57,7 +57,7 @@ CURRENTLY DOES NOT CONTAIN ANYTHING
     - Player Animation & SFX
     - Refining Visuals
     
-**Austin (John) Reed ([jar741](https://github.com/ReedJA117)**
+**Austin (John) Reed ([jar741](https://github.com/ReedJA117))**
   - Initial Gunnery Sergeant Cook character development
   - Caveman character development
   - Game Design Pitch Presentation contributor
@@ -66,7 +66,7 @@ CURRENTLY DOES NOT CONTAIN ANYTHING
     - Background UI & Music
     - Player Movement
     
-**Cassie Javorsky ([clj500](https://github.com/clj500)**
+**Cassie Javorsky ([clj500](https://github.com/clj500))**
   - Gunnery Sergeant Cook character development
   - Samurai character development
   - Game Design Pitch Presentation contributor
@@ -76,7 +76,7 @@ CURRENTLY DOES NOT CONTAIN ANYTHING
     - Controls Page
     - Refining Visuals
     
-**Gabe Becker ([gjb125](https://github.com/GabeBecker2048)**
+**Gabe Becker ([gjb125](https://github.com/GabeBecker2048))**
   - Samurai character development
   - Game Design Pitch Presentation contributor
   - Game Design Document contributor
