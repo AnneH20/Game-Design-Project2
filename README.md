@@ -46,9 +46,8 @@ The quit button exits the application
   - Period: Attack
   
 ## Settings Screen:
-Change screen view (Fullscreen or not)
-
-Change background music volume for the entire game
+  - Change screen view (Fullscreen or not)
+  - Change background music volume for the entire game
 
 ## Pause Screen:
 Pauses the game and allows players to:
