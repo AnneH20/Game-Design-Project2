@@ -10,7 +10,7 @@ public class p2select_indicator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(2.6f, -3.6f, 0f);
+        transform.position = new Vector3(4f, -2.5f, 0f);
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class p2select_indicator : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && !p2selected)
-            transform.position = new Vector3(-2.6f, -3.6f, 0f);
+            transform.position = new Vector3(4f, -2.5f, 0f);
         if (Input.GetKeyDown(KeyCode.RightArrow) && !p2selected)
-            transform.position = new Vector3(2.6f, -3.6f, 0f);
+            transform.position = new Vector3(-4f, -2.5f, 0f);
 
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
