@@ -7,14 +7,13 @@ public class P1Enemy : MonoBehaviour
     public Animator P1animator;
     public int P1maxHealth = 100;
     int P1currentHealth;
-
     public P1Health P1healthBar;
     [SerializeField] private AudioSource P1Punch;
     [SerializeField] private AudioSource P1Death;
     public Image[] lives;
     //[SerializeField] private int MaxLives;
     public int currentLives;
-    
+
     public GameOverScript gameManager;
     private bool isGameOver;
 
@@ -35,7 +34,26 @@ public class P1Enemy : MonoBehaviour
         if (P1currentHealth <= 0)
         {
             Die();
+            
+            //decrement current lives if over 0 lives and reset health
+            if (currentLives > 0)
+            {
+                currentLives--;
+                lives[currentLives].enabled = false;
+                P1currentHealth = P1maxHealth;
+                P1healthBar.P1SetHeatlh(P1currentHealth);
+
+                StartCoroutine(Respawn());
+            }
+            // need to add end scene as else statmenet. 
+            if (currentLives == 0)
+            {
+                Die();
+                P1animator.SetBool("HasLives", false);
+                GameOver();
+            }
         }
+
         P1Punch.Play();
         P1healthBar.P1SetHeatlh(P1currentHealth);
     }
@@ -45,24 +63,9 @@ public class P1Enemy : MonoBehaviour
         // Die animation
         P1animator.SetBool("IsDead", true);
         P1Death.Play();
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-        //decrement current lives if over 0 lives and reset health
-        if(currentLives > 0)
-        {
-            
-            currentLives--;
-            lives[currentLives].enabled = false;
-            P1currentHealth = P1maxHealth;
-            P1healthBar.P1SetHeatlh(P1currentHealth);
 
-            StartCoroutine(Respawn());
-        }
-        // need to add end scene as else statmenet. 
-        if (currentLives == 0){
-            P1animator.SetBool("HasLives",false);
-            GameOver();
-        }
+ //       GetComponent<Collider2D>().enabled = false;
+ //       this.enabled = false;
     }
 
     public void GameOver()
@@ -93,18 +96,20 @@ public class P1Enemy : MonoBehaviour
         
        if(currentLives > 0)
         {
-            
+            Die();
             currentLives--;
+            lives[currentLives].enabled = false;
             P1currentHealth = P1maxHealth;
             P1healthBar.P1SetHeatlh(P1currentHealth);
             
             StartCoroutine(Respawn());
         }
         // need to add end scene as else statmenet. 
-        else{
-            P1animator.SetBool("HasLives",false);
+        if (currentLives == 0)
+        {
+            P1animator.SetBool("HasLives", false);
+            GameOver();
         }
-        
     }
 
     IEnumerator Respawn()

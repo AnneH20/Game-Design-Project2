@@ -9,12 +9,14 @@ public class GameOverScript : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public GameObject timer;
+    public GameObject PauseMenuScreen;
+    public static bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+ //       Cursor.visible = false;
+ //        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -25,11 +27,21 @@ public class GameOverScript : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
         else
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+ //           Cursor.visible = false;
+  //          Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -43,6 +55,7 @@ public class GameOverScript : MonoBehaviour
 
     public void mainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("HomeScreen");
         Debug.Log("Main Menu");
     }
@@ -57,5 +70,19 @@ public class GameOverScript : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    public void Pause()
+    {
+        PauseMenuScreen.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void Resume()
+    {
+        PauseMenuScreen.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 }

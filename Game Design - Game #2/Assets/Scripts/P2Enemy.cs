@@ -37,6 +37,24 @@ public class P2Enemy : MonoBehaviour
         if (P2currentHealth <= 0)
         {
             Die();
+            //decrement current lives if over 0 lives and reset health
+            if (currentLives > 0)
+            {
+
+                currentLives--;
+                lives[currentLives].enabled = false;
+                P2currentHealth = P2maxHealth;
+                P2healthBar.P2SetHeatlh(P2currentHealth);
+
+                StartCoroutine(Respawn());
+            }
+            // need to add end scene as else statmenet. 
+            if (currentLives == 0)
+            {
+                P2animator.SetBool("IsDead", true);
+                P2animator.SetBool("HasLives", false);
+                GameOver();
+            }
         }
         P2Punch.Play();
         P2healthBar.P2SetHeatlh(P2currentHealth);
@@ -47,25 +65,8 @@ public class P2Enemy : MonoBehaviour
         // Die animation
         P2animator.SetBool("IsDead", true);
         P2Death.Play();
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-
-        //decrement current lives if over 0 lives and reset health
-        if(currentLives > 0)
-        {
-            
-            currentLives--;
-            lives[currentLives].enabled = false;
-            P2currentHealth = P2maxHealth;
-            P2healthBar.P2SetHeatlh(P2currentHealth);
-            
-            StartCoroutine(Respawn());
-        }
-        // need to add end scene as else statmenet. 
-        if (currentLives == 0){
-            P2animator.SetBool("HasLives",false);
-            GameOver();
-        }
+ //       GetComponent<Collider2D>().enabled = false;
+ //       this.enabled = false;
     }
 
     public void GameOver()
@@ -97,14 +98,17 @@ public class P2Enemy : MonoBehaviour
         {
             
             currentLives--;
+            lives[currentLives].enabled = false;
             P2currentHealth = P2maxHealth;
             P2healthBar.P2SetHeatlh(P2currentHealth);
             
             StartCoroutine(Respawn());
         }
         // need to add end scene as else statmenet. 
-        else{
-            P2animator.SetBool("HasLives",false);
+        if (currentLives == 0)
+        {
+            P2animator.SetBool("HasLives", false);
+            GameOver();
         }
 
     }
