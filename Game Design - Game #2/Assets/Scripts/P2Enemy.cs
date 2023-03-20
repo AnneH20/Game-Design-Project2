@@ -14,6 +14,9 @@ public class P2Enemy : MonoBehaviour
 
     public P2Health P2healthBar;
 
+    public GameOverScript gameManager;
+    private bool isGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +61,27 @@ public class P2Enemy : MonoBehaviour
         // need to add end scene as else statmenet. 
         else{
             P2animator.SetBool("HasLives",false);
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        if (!isGameOver)
+        {
+            //Set game over to true
+            isGameOver = true;
+
+            //Announce winner
+            Debug.Log("Player 1 Wins!");
+
+            //Trigger Game Over Manager
+            gameManager.gameOver();
+        }
+
+        else
+        {
+            //Nothing happens
         }
     }
 

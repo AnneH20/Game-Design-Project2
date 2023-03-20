@@ -7,13 +7,15 @@ public class P1Enemy : MonoBehaviour
     public int P1maxHealth = 100;
     int P1currentHealth;
 
-
     public P1Health P1healthBar;
     [SerializeField] private AudioSource P1Punch;
     [SerializeField] private AudioSource P1Death;
 
     [SerializeField] private int MaxLives;
     private int currentLives;
+
+    public GameOverScript gameManager;
+    private bool isGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,27 @@ public class P1Enemy : MonoBehaviour
         // need to add end scene as else statmenet. 
         else{
             P1animator.SetBool("HasLives",false);
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        if (!isGameOver)
+        {
+            //Set game over to true
+            isGameOver = true;
+
+            //Announce winner
+            Debug.Log("Player 2 Wins!");
+
+            //Trigger Game Over Manager
+            gameManager.gameOver();
+        }
+
+        else
+        {
+            //Nothing happens
         }
     }
 
@@ -80,16 +103,12 @@ public class P1Enemy : MonoBehaviour
     }
 
     IEnumerator Respawn()
-    {
-        
+    {     
         yield return new WaitForSeconds(2f);
         transform.position = new Vector2(4, -4);
         P1animator.SetBool("IsDead", false);
         P1animator.SetBool("HasLives",true);
         P1healthBar.P1SetHeatlh(P1currentHealth);
-        
-       
-
     }
 }
 
