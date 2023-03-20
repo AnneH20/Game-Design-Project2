@@ -2189,7 +2189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260617534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -4, z: 0}
+  m_LocalPosition: {x: -0.292, y: -5.224, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2347,7 +2347,6 @@ MonoBehaviour:
   P2maxHealth: 100
   P2Punch: {fileID: 1260617545}
   P2Death: {fileID: 1260617547}
-  MaxLives: 3
   P2healthBar: {fileID: 290084081}
 --- !u!114 &1260617544
 MonoBehaviour:
@@ -3027,7 +3026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613750525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -4.2, z: 0}
+  m_LocalPosition: {x: 1.355, y: -5.141, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3070,7 +3069,6 @@ MonoBehaviour:
   P1healthBar: {fileID: 128677792}
   P1Punch: {fileID: 1613750537}
   P1Death: {fileID: 1613750539}
-  MaxLives: 3
 --- !u!114 &1613750536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3205,7 +3203,7 @@ MonoBehaviour:
   - {fileID: 1761788628}
   - {fileID: 11454792}
   m_Bounds:
-    m_Center: {x: 0.03543935, y: -0.095265895, z: 0}
+    m_Center: {x: 0.0354395, y: -0.095265865, z: 0}
     m_Extent: {x: 0.11002353, y: 0.24042338, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

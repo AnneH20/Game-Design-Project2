@@ -9,8 +9,6 @@ public class P2Enemy : MonoBehaviour
     int P2currentHealth;
     [SerializeField] private AudioSource P2Punch;
     [SerializeField] private AudioSource P2Death;
-    [SerializeField] private int MaxLives;
-    private int currentLives;
 
     public P2Health P2healthBar;
 
@@ -19,9 +17,6 @@ public class P2Enemy : MonoBehaviour
     {
         P2currentHealth = P2maxHealth;
         P2healthBar.P2SetMaxHealth(P2maxHealth);
-
-        currentLives = MaxLives;
-
     }
 
     public void TakeDamage(int P2damage)
@@ -44,51 +39,11 @@ public class P2Enemy : MonoBehaviour
         P2Death.Play();
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-
-        //decrement current lives if over 0 lives and reset health
-        if(currentLives > 0)
-        {
-            
-            currentLives--;
-            P2currentHealth = P2maxHealth;
-            P2healthBar.P2SetHeatlh(P2currentHealth);
-            
-            StartCoroutine(Respawn());
-        }
-        // need to add end scene as else statmenet. 
-        else{
-            P2animator.SetBool("HasLives",false);
-        }
     }
 
     public void outOfBounds()
     {
-        if(currentLives > 0)
-        {
-            
-            currentLives--;
-            P2currentHealth = P2maxHealth;
-            P2healthBar.P2SetHeatlh(P2currentHealth);
-            
-            StartCoroutine(Respawn());
-        }
-        // need to add end scene as else statmenet. 
-        else{
-            P2animator.SetBool("HasLives",false);
-        }
-
-    }
-
-    IEnumerator Respawn()
-    {
-        
-        yield return new WaitForSeconds(2f);
-        transform.position = new Vector2(-4, -4);
-        P2animator.SetBool("IsDead", false);
-        P2animator.SetBool("HasLives",true);
+        P2currentHealth = 0;
         P2healthBar.P2SetHeatlh(P2currentHealth);
-        
-       
-
     }
 }
