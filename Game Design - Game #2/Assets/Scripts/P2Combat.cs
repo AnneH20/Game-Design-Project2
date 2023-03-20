@@ -13,7 +13,7 @@ public class P2Combat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Period))
         {
             SoundManager.instance.PlaySound(FBarbarianPunch);
             P2Attack();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class P2Enemy : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class P2Enemy : MonoBehaviour
     int P2currentHealth;
     [SerializeField] private AudioSource P2Punch;
     [SerializeField] private AudioSource P2Death;
-    [SerializeField] private int MaxLives;
-    private int currentLives;
+    public Image[] lives;
+    //[SerializeField] private int MaxLives;
+    public int currentLives;
 
     public P2Health P2healthBar;
 
@@ -23,7 +25,7 @@ public class P2Enemy : MonoBehaviour
         P2currentHealth = P2maxHealth;
         P2healthBar.P2SetMaxHealth(P2maxHealth);
 
-        currentLives = MaxLives;
+        currentLives = 3;
 
     }
 
@@ -53,13 +55,14 @@ public class P2Enemy : MonoBehaviour
         {
             
             currentLives--;
+            lives[currentLives].enabled = false;
             P2currentHealth = P2maxHealth;
             P2healthBar.P2SetHeatlh(P2currentHealth);
             
             StartCoroutine(Respawn());
         }
         // need to add end scene as else statmenet. 
-        else{
+        if (currentLives == 0){
             P2animator.SetBool("HasLives",false);
             GameOver();
         }
@@ -84,7 +87,7 @@ public class P2Enemy : MonoBehaviour
 
         else
         {
-            //Nothing happens
+            gameManager.gameOver();
         }
     }
 
@@ -109,9 +112,9 @@ public class P2Enemy : MonoBehaviour
     IEnumerator Respawn()
     {
         
-        yield return new WaitForSeconds(2f);
-        transform.position = new Vector2(-4, -4);
-        P2animator.SetBool("IsDead", false);
+        yield return new WaitForSeconds(1f);
+        transform.position = new Vector2(4, -4);
+        //P2animator.SetBool("IsDead", false);
         P2animator.SetBool("HasLives",true);
         P2healthBar.P2SetHeatlh(P2currentHealth);
     }

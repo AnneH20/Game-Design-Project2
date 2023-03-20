@@ -8,7 +8,7 @@ public class GameOverScript : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject player1;
     public GameObject player2;
-
+    public GameObject timer;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@ public class GameOverScript : MonoBehaviour
         gameOverUI.SetActive(true);
         player1.SetActive(false);
         player2.SetActive(false);
+        timer.SetActive(false);
     }
 
     public void mainMenu()
