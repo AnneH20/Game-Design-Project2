@@ -13,7 +13,7 @@ public class P1Combat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Period))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             SoundManager.instance.PlaySound(FCyberPunch);
             P1Attack();
