@@ -75,6 +75,9 @@ public class P1Enemy : MonoBehaviour
 
             //Trigger Game Over Manager
             gameManager.gameOver();
+
+            //Disable Player
+            gameObject.SetActive(false);
         }
 
         else

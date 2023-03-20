@@ -77,6 +77,9 @@ public class P2Enemy : MonoBehaviour
 
             //Trigger Game Over Manager
             gameManager.gameOver();
+
+            //Disable Player
+            gameObject.SetActive(false);
         }
 
         else
@@ -111,8 +114,5 @@ public class P2Enemy : MonoBehaviour
         P2animator.SetBool("IsDead", false);
         P2animator.SetBool("HasLives",true);
         P2healthBar.P2SetHeatlh(P2currentHealth);
-        
-       
-
     }
 }

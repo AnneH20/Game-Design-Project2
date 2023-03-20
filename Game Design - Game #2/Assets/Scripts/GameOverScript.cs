@@ -10,13 +10,24 @@ public class GameOverScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(gameOverUI.activeInHierarchy)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
         
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public void gameOver()
@@ -24,13 +35,21 @@ public class GameOverScript : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
-    public void rematch()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void mainMenu()
     {
         SceneManager.LoadScene("Homescreen");
+        Debug.Log("Main Menu");
+    }
+
+    public void rematch()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Rematch");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
     }
 }
