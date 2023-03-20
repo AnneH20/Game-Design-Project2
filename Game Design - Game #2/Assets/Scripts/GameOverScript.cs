@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
@@ -21,5 +22,15 @@ public class GameOverScript : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+    }
+
+    public void rematch()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("Homescreen");
     }
 }

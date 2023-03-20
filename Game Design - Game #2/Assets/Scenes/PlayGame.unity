@@ -992,7 +992,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 313252998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1455143246}
+        m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
+        m_MethodName: rematch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &313252998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,6 +1086,7 @@ GameObject:
   - component: {fileID: 394368927}
   - component: {fileID: 394368926}
   - component: {fileID: 394368925}
+  - component: {fileID: 394368928}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1145,7 +1158,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 394368926}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 394368928}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: LoadScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &394368926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,6 +1209,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394368923}
   m_CullTransparentMesh: 1
+--- !u!114 &394368928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394368923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d3fa796da62fe4cb2176c81fe58999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Click: {fileID: 8300000, guid: f2079c22b1f975e48866553055bccf53, type: 3}
 --- !u!1 &468205745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,7 +4209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1687284388
 RectTransform:
   m_ObjectHideFlags: 0
