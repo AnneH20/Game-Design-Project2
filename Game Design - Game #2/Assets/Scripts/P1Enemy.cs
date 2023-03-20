@@ -6,6 +6,8 @@ public class P1Enemy : MonoBehaviour
     public Animator P1animator;
     public int P1maxHealth = 100;
     int P1currentHealth;
+
+
     public P1Health P1healthBar;
     [SerializeField] private AudioSource P1Punch;
     [SerializeField] private AudioSource P1Death;
