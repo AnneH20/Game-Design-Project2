@@ -47,6 +47,7 @@ The quit button exits the application
   
 ## Settings Screen:
 Change screen view (Fullscreen or not)
+
 Change background music volume for the entire game
 
 ## Pause Screen:
