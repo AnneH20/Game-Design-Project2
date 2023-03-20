@@ -93,20 +93,20 @@ public class P1Enemy : MonoBehaviour
 
     public void outOfBounds()
     {
-        
-       if(currentLives > 0)
+        //decrement current lives if over 0 lives and reset health
+        if (currentLives > 0)
         {
-            Die();
             currentLives--;
             lives[currentLives].enabled = false;
             P1currentHealth = P1maxHealth;
             P1healthBar.P1SetHeatlh(P1currentHealth);
-            
+
             StartCoroutine(Respawn());
         }
         // need to add end scene as else statmenet. 
         if (currentLives == 0)
         {
+            Die();
             P1animator.SetBool("HasLives", false);
             GameOver();
         }

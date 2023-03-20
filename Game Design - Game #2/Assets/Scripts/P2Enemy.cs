@@ -94,26 +94,27 @@ public class P2Enemy : MonoBehaviour
 
     public void outOfBounds()
     {
-        if(currentLives > 0)
+        //decrement current lives if over 0 lives and reset health
+        if (currentLives > 0)
         {
-            
+
             currentLives--;
             lives[currentLives].enabled = false;
             P2currentHealth = P2maxHealth;
             P2healthBar.P2SetHeatlh(P2currentHealth);
-            
+
             StartCoroutine(Respawn());
         }
         // need to add end scene as else statmenet. 
         if (currentLives == 0)
         {
+            P2animator.SetBool("IsDead", true);
             P2animator.SetBool("HasLives", false);
-            GameOver();
-        }
 
+        }
     }
 
-    IEnumerator Respawn()
+        IEnumerator Respawn()
     {
         
         yield return new WaitForSeconds(1f);
