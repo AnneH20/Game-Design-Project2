@@ -95,10 +95,10 @@ Pauses the game and allows players to:
   - Game Design Pitch Presentation contributor
   - Game Design Document contributor
   - Unity Software Developer
-    - Main Menu and Game Over Screens
-    - Controls Menu Screen and Text
-    - Refining Visuals
-
+    - Main Menu Controls and Settings Button Scripts, Functionality, and SFX
+    - Controls Menu Screen, and Text
+    - GameOver Screen Design, Button Functionality, and Scripts
+    - Assisted with Visuals and Debugging Some Minor Errors
     
 **Gabe Becker ([gjb125](https://github.com/GabeBecker2048))**
   - Gunnery Sergeant Cook character development
