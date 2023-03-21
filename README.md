@@ -62,7 +62,7 @@ Pauses the game and allows players to:
   - Future Space Woman character development
   - Game Design Pitch Presentation contributor
   - Game Design Document contributor
-  - Unity software developer
+  - Unity Software Developer
     - Player Health and Game Timer UI
     - Player Animation & SFX
     - Player Lives UI
@@ -78,7 +78,7 @@ Pauses the game and allows players to:
   - Caveman character development
   - Game Design Pitch Presentation contributor
   - Game Design Document contributor
-  - Unity software developer
+  - Unity Software Developer
     - Background UI & Music
     - Main Menu SFX & Music
     - Enhanced Player SFX
