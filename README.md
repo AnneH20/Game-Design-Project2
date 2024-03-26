@@ -2,7 +2,10 @@
 A two-player fighting game which allows players to battle against each other with different characters
 
 Fight against your friend and see who comes out on top! Use a shared keyboard and press keys to fight each other. Each player is granted 3 lives and there's a 3 minute timer set.
+
 After your lives run out or the timer runs out, the game is over. 
+
+To access the C# scripts, click here: https://github.com/AnneH20/Game-Design-Project2/tree/main/Game%20Design%20-%20Game%20%232/Assets/Scripts
 
 ## Main Menu Screen:  
 Has 3 navigation buttons and a quit button  
