@@ -5,6 +5,8 @@ Fight against your friend and see who comes out on top! Use a shared keyboard an
 
 After your lives run out or the timer runs out, the game is over. 
 
+For a video demonstration, click here: https://youtu.be/lneKiGGXQK0
+
 To access the C# scripts, click here: https://github.com/AnneH20/Game-Design-Project2/tree/main/Game%20Design%20-%20Game%20%232/Assets/Scripts
 
 ## Main Menu Screen:  
